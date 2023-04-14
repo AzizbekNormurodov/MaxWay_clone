@@ -4,7 +4,7 @@ import 'package:maxway_clone/routes/app_routes.dart';
 
 class ListviewSeperatedWidget extends StatelessWidget {
   ListviewSeperatedWidget({Key? key}) : super(key: key);
-  List<String> list_image = ["burger", "burger2", "burger3", "burger"];
+  List<String> listImage = ["burger", "burger2", "burger3","banner"];
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ListviewSeperatedWidget extends StatelessWidget {
             Navigator.pushNamed(
               context,
               AppRoutes.banner,
-              arguments: list_image[index],
+              arguments: "assets/home/${listImage[index]}.png",
             );
           },
           child: ClipRRect(
@@ -25,9 +25,9 @@ class ListviewSeperatedWidget extends StatelessWidget {
               Radius.circular(12),
             ),
             child: Hero(
-              tag: list_image[index],
+              tag: "assets/home/${listImage[index]}.png",
               child: Image.asset(
-                "assets/home/${list_image[index]}.png",
+                "assets/home/${listImage[index]}.png",
                 fit: BoxFit.fitWidth,
               ),
             ),
@@ -35,7 +35,7 @@ class ListviewSeperatedWidget extends StatelessWidget {
         );
       },
       separatorBuilder: (context, index) => const SizedBox(width: 8),
-      itemCount: list_image.length,
+      itemCount: listImage.length,
     );
   }
 }
