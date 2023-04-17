@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:maxway_clone/core/theme/theme_text_styles.dart';
 import 'package:maxway_clone/pages/main/my_orders/widget/order_history_widget.dart';
+import 'package:maxway_clone/pages/main/my_orders/widget/status_widget.dart';
+
+import 'widget/button_no_widget.dart';
+import 'widget/button_yes_widget.dart';
 
 class CurrentPage extends StatefulWidget {
   const CurrentPage({Key? key}) : super(key: key);
@@ -86,7 +90,7 @@ class _CurrentPageState extends State<CurrentPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 12, right: 12),
                     child: Row( mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text("Скидка", style: ThemeTextStyles.order2,),
                         Text("-5%", style: ThemeTextStyles.order3,),
                       ],
@@ -105,7 +109,34 @@ class _CurrentPageState extends State<CurrentPage> {
               ),
             ),
           ),
-          OrderHistoryWidget(),
+          InkWell( onTap: (){
+            showDialog(
+                          context: context,
+                          builder: (context) {
+                            return const AlertDialog(
+                              title: Text(
+                                textAlign: TextAlign.center,
+                                'Поздравляем',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.black),
+                              ),
+                              content: Text(
+                                'Ваш заказ успешно доставлен! \nВам понравилось наш обслуга?',
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff818C99)),
+                              ),
+                              actions: [
+                                ButtonNoWidget(),
+                                ButtonYesWidget(),
+                              ],
+                            );
+                          });
+                    },
+              child: StatusWidget(),),
         ],
       ),
     );

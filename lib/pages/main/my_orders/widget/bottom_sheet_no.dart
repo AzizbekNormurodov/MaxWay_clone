@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:maxway_clone/routes/app_routes.dart';
 
-class CommentBottomSheet extends StatefulWidget {
-  const CommentBottomSheet({Key? key}) : super(key: key);
+class BottomSheetNoCommit extends StatefulWidget {
+  const BottomSheetNoCommit({Key? key}) : super(key: key);
 
   @override
-  State<CommentBottomSheet> createState() => _CommentBottomSheetState();
+  State<BottomSheetNoCommit> createState() => _BottomSheetNoCommitState();
 }
 
-class _CommentBottomSheetState extends State<CommentBottomSheet> {
+class _BottomSheetNoCommitState extends State<BottomSheetNoCommit> {
   bool isChecked = false, isChecked1 = false, isChecked2 = false, isChecked3 = false;
 
   @override

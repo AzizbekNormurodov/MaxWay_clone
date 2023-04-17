@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:maxway_clone/core/theme/theme_text_styles.dart';
-import 'package:maxway_clone/routes/app_routes.dart';
 
-import 'button_no_widget.dart';
-import 'button_yes_widget.dart';
-
-class CurrentOrdersWidget extends StatefulWidget {
-  const CurrentOrdersWidget({Key? key}) : super(key: key);
+class StatusWidget extends StatefulWidget {
+  const StatusWidget({Key? key}) : super(key: key);
 
   @override
-  State<CurrentOrdersWidget> createState() => _CurrentOrdersWidgetState();
+  State<StatusWidget> createState() => _StatusWidgetState();
 }
 
-class _CurrentOrdersWidgetState extends State<CurrentOrdersWidget> {
+class _StatusWidgetState extends State<StatusWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,21 +30,15 @@ class _CurrentOrdersWidgetState extends State<CurrentOrdersWidget> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Статус заказа №1342",
-                  style: ThemeTextStyles.status),
+              const Text("Статус заказа №1342", style: ThemeTextStyles.status),
               SizedBox(height: 4),
               Text("Заказ оформлен", style: ThemeTextStyles.order),
               SizedBox(height: 16),
-              InkWell( onTap: (){
-                Navigator.pushNamed(context, AppRoutes.current);
-              },
-                child: Image.asset(
-                  "assets/my_orders/order is processed.png",
-                  width: 327,
-                  height: 44,
-                ),
+              Image.asset(
+                "assets/my_orders/order is processed.png",
+                width: 327,
+                height: 44,
               ),
-
             ],
           ),
         ),

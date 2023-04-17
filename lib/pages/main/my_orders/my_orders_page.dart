@@ -39,42 +39,39 @@ class _MyOrdersPageState extends State<MyOrdersPage>
         ),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(56),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 13, right: 19, top: 20),
-            child: Container(
-              width: 343,
-              height: 32,
-              margin: EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Color(0xffEFEFF4),
-                borderRadius: BorderRadius.circular(12),
+          child: Container(
+            width: double.infinity,
+            height: 32,
+            margin: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Color(0xffEFEFF4),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Theme(
+              data: Theme.of(context).copyWith(
+                colorScheme: Theme.of(context).colorScheme.copyWith(
+                      surfaceVariant: Colors.transparent,
+                    ),
               ),
-              child: Theme(
-                data: Theme.of(context).copyWith(
-                  colorScheme: Theme.of(context).colorScheme.copyWith(
-                        surfaceVariant: Colors.transparent,
-                      ),
-                ),
-                child: TabBar(
-                  labelColor: Colors.black,
-                  padding: EdgeInsets.all(2),
-                  controller: tabController,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  indicator: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(12),
-                    ),
+              child: TabBar(
+                labelColor: Colors.black,
+                padding: EdgeInsets.all(2),
+                controller: tabController,
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicator: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
                   ),
-                  tabs: const [
-                    Tab(
-                      child: Text("История заказов"),
-                    ),
-                    Tab(
-                      child: Text("Текущие заказы"),
-                    ),
-                  ],
                 ),
+                tabs: const [
+                  Tab(
+                    child: Text("История заказов"),
+                  ),
+                  Tab(
+                    child: Text("Текущие заказы"),
+                  ),
+                ],
               ),
             ),
           ),

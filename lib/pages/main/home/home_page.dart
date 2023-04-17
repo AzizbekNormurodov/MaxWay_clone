@@ -3,6 +3,7 @@ import 'package:maxway_clone/core/theme/theme_colors.dart';
 import 'package:maxway_clone/core/theme/theme_text_styles.dart';
 import 'package:maxway_clone/pages/main/home/information_page.dart';
 import 'package:maxway_clone/pages/main/home/widget/listview_builder_widget.dart';
+import 'package:maxway_clone/routes/app_routes.dart';
 
 import 'widget/listview_seperated_widget.dart';
 import 'widget/sliver_padding_widget.dart';
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar( 
         elevation: 1,
         title: const Padding(
           padding: EdgeInsets.only(bottom: 8),

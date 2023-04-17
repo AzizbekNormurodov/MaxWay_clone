@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:maxway_clone/core/theme/theme_colors.dart';
+import 'package:maxway_clone/routes/app_routes.dart';
 
 class InformationPage extends StatefulWidget {
    InformationPage({Key? key}) : super(key: key);
@@ -55,6 +56,7 @@ class _InformationPageState extends State<InformationPage> {
                   child: ElevatedButton(
                     onPressed: (){
 
+
                       if (number==0)
                         {
                           return;
@@ -92,7 +94,7 @@ class _InformationPageState extends State<InformationPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 12),
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () {Navigator.pushNamed(context, AppRoutes.checkout);
                       setState(() {
 
                       });

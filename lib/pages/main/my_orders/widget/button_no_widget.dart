@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:maxway_clone/routes/app_routes.dart';
 
-import 'bottom_sheet_no_sheet.dart';
+import 'bottom_sheet_no.dart';
 
 class ButtonNoWidget extends StatefulWidget {
   const ButtonNoWidget({Key? key}) : super(key: key);
@@ -39,7 +39,7 @@ class _ButtonNoWidgetState extends State<ButtonNoWidget> {
         showModalBottomSheet(
           context: context,
           builder: (context) {
-            return const CommentBottomSheet();
+            return const BottomSheetNoCommit();
           },
         );
       },
