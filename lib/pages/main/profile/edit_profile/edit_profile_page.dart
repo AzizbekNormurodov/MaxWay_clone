@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:maxway_clone/core/theme/theme_text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
+import 'package:maxway_clone/core/utils/cupertino_date_picker_widget.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -98,27 +99,27 @@ class _EditProfilePageState extends State<EditProfilePage> {
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: TextFormField(
-              onTap: () {
-                showModalBottomSheet(
-                    context: context,
-                    builder: (_) {
-                      return CupertinoDatePicker(
-                        onDateTimeChanged: (_) {},
-                        mode: CupertinoDatePickerMode.time,
-                      );
-                    });
-              },
               style: ThemeTextStyles.inputname,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   hintText: "11.09.1991",
                   fillColor: Colors.white,
-                  labelStyle: TextStyle(fontSize: 10),
+                  labelStyle: TextStyle(fontSize: 10, color: Colors.black),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                   )),
               // controller: cpfcontroller,
             ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     showModalBottomSheet(
+            //         context: context,
+            //         builder: (_) {
+            //           return DateWidget(text: "text", mode: CupertinoDatePickerMode.date);
+            //         });
+            //   },
+            //   child: Text("Sana"),
+            // ),
           ),
           Spacer(),
           Padding(
